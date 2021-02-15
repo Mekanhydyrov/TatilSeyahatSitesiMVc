@@ -1,0 +1,40 @@
+﻿@using TatilSeyahatSitesiMVc.Models.Sinflar
+@model List<AdresBlog>
+@{
+    ViewBag.Title = "Adres";
+    Layout = "~/Views/Shared/_LayoutKullanici.cshtml";
+}
+
+<body>
+    <div class="contact" style="background-color:white">
+        <div class="wrap">
+            <div class="contact-top">
+                @foreach (var x in Model)
+                {
+                    <h3>@x.Baslik</h3>
+                    <p>@x.Aciklama</p>
+                }
+            </div>
+             @Html.Action("iletisim","AnaSayfa")
+            <div class="clear"></div>
+            <div class="contact-bottom">
+                <div class="contact-left">
+                    <div class="contact-add">
+                        <h3>BİZE ULAŞIN</h3>
+                        @foreach (var x in Model)
+                        {
+                            <p>@x.AcikAdres</p>
+                            <p>Telefon: @x.Telefon</p>
+                            <p>Mail:<a href="mailto:signup@gmail.com"> @x.Mail</a></p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</body>
+
+
+
+

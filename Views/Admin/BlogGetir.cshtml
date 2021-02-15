@@ -1,0 +1,43 @@
+﻿@model TatilSeyahatSitesiMVc.Models.Sinflar.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>BLOG DÜZENLEME PANELİ</h2>
+
+@using (Html.BeginForm("Guncelle", "Admin", FormMethod.Post))
+{
+    <br />
+    <div>
+        <label><b>BLOG İD</label>
+        @Html.TextBoxFor(x => x.id, new { @class = "form-control", @readonly="redadonly"})
+    </div>
+    <br />
+    <div>
+        <label><b>BLOG BAŞLIK</label>
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>BLOG TARIH</label>
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>BLOG FOTO</label>
+        @Html.TextBoxFor(x => x.Blokimg, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>BLOG AÇIKLAMA</label>
+        @Html.TextAreaFor(x => x.Aciklama,10,1, new { @class = "form-control" })
+    </div>
+    <br />
+    @Html.HiddenFor(x => x.id)
+    <div>
+        <button class="btn btn-warning">Blog Güncelle</button>
+    </div>
+    <br />
+}
+

@@ -1,0 +1,31 @@
+﻿@using TatilSeyahatSitesiMVc.Models.Sinflar
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>BLOGLAR LİSTESİ</h2>
+
+<table class="table table-bordered" >
+    <tr>
+        <th>İD</th>
+        <th>BAŞLIK</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>DETAYLAR</th>
+    </tr>
+    <tbody>
+        @foreach(var x in Model)
+        {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.Baslik</td>
+            <td><a href="~/Admin/BlogSil/@x.id" class="btn btn-danger">Sil</a></td>
+            <td><a href="~/Admin/BlogGetir/@x.id" class="btn btn-success">Güncelle</a></td>
+            <td><a href="~/Admin/BlogDetay/@x.id" class="btn btn-default">Detay</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="~/Admin/YeniBlog" class="btn btn-info">Yeni Blog</a>

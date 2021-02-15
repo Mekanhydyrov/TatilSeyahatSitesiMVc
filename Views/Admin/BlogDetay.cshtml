@@ -1,0 +1,32 @@
+﻿@model TatilSeyahatSitesiMVc.Models.Sinflar.Blog
+@{
+    ViewBag.Title = "BlogDetay";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>BLOG DETAY PANELİ</h2>
+
+@using (Html.BeginForm("BlogDetay", "Admin", FormMethod.Post))
+{
+    <br />
+    <div>
+        <label><b>BLOG BAŞLIK</label>
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", @readonly="readonly" })
+    </div>
+    <br />
+    <hr />
+    <div>
+        <label><b>BLOG TARIH</label>
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control",@readonly="readonly" })
+    </div>
+    <br />
+    <hr />
+    <div>
+        <label><b>BLOG AÇIKLAMA</label>
+        @Html.TextAreaFor(x => x.Aciklama, 10, 1, new { @class = "form-control",@readonly="readonly" })
+    </div>
+    <br />
+    <hr />
+    @Html.HiddenFor(x => x.id)
+}
+

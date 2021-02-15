@@ -1,0 +1,23 @@
+﻿@using TatilSeyahatSitesiMVc.Models.Sinflar
+@model List<Blog>
+
+<div class="con-bot">
+    @foreach (var x in Model)
+    {
+        <div class="left">
+            <div class="bot-left">
+                <img src="@x.Blokimg" alt="" />
+            </div>
+            <div class="left-text">
+                <h4>@x.Baslik</h4>
+                <span class="doller">@x.Tarih.ToString("dd.MM.yyy")</span>
+                <p>@x.Aciklama.Substring(0, 80)</p>
+                <p><a href="~/Blog/BlogDetay/@x.id"><span class="read">Devamını Oku >></span></a></p>
+            </div>
+        </div>
+    }
+
+    @Html.Action("Partial2", "AnaSayfa")
+
+    <div class="clear"></div>
+</div>

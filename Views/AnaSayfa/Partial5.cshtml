@@ -1,0 +1,17 @@
+﻿@using TatilSeyahatSitesiMVc.Models.Sinflar
+@model List<Blog>
+
+
+    <div class="box1-left">
+        <h4>Son Bloglar</h4>
+        @foreach (var x in Model)
+        {
+            <div class="bot-img">
+                <img src="@x.Blokimg" alt="" />
+            </div>
+            <div class="bot-desc1">
+                <a href="~/Blog/BlogDetay/@x.id"><p>@x.Aciklama.Substring(0, 70) ...</p></a>
+            </div>
+            <div class="clear"></div>
+        }
+    </div>

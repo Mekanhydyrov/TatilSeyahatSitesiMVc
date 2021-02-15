@@ -1,0 +1,32 @@
+﻿@using TatilSeyahatSitesiMVc.Models.Sinflar
+@model List<İletisim>
+@{
+    ViewBag.Title = "iletisimListe";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>GELEN MESAJLAR</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>İD</th>
+        <th>AD SOYAD</th>
+        <th>MAİL</th>
+        <th>KONU</th>
+        <th>MESAJ</th>
+        <th>SİL</th>
+    </tr>
+    <tbody>
+        @foreach(var x in Model)
+        {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.AdSoyad</td>
+            <td>@x.Mail</td>
+            <td>@x.Konu</td>
+            <td>@x.Mesaj</td>
+            <td><a href="~/Admin/MesajSil/@x.id" class="btn btn-danger">Sil</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+

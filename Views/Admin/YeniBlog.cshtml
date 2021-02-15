@@ -1,0 +1,37 @@
+﻿@model TatilSeyahatSitesiMVc.Models.Sinflar.Blog
+@{
+    ViewBag.Title = "YeniBlog";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>YENİ BLOG EKLEME PANELİ</h2>
+
+<form method="post">
+    <br />
+    <div>
+        <label><b>BAŞLIK</b></label>
+        <input type="text" name="Baslik" class="form-control" required="" maxlength="100" />
+    </div>
+    <br />
+    <div>
+        <label><b>TARIH</b></label>
+        <br />
+        <input type="text" name="Tarih" required="" class="form-control" />
+    </div>
+    <div>
+        <label><b>FOTO</b></label>
+        <input type="text" name="Blogimg" class="form-control" required="" />
+    </div>
+    <br />
+    <div>
+        <label><b>AÇIKLAMA</b></label>
+       @Html.TextAreaFor(x=>x.Aciklama,10,1, new { @class="form-control"})
+    </div>
+    <br />
+
+    <div>
+        <button class="btn btn-primary">Blog Ekle</button>
+    </div>
+    <br />
+</form>
+

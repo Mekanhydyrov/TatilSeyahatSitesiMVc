@@ -1,0 +1,12 @@
+﻿@model TatilSeyahatSitesiMVc.Models.Sinflar.Yorumlar
+
+<div class="content-form">
+    <h3>Yorumunuz</h3>
+    <form method="post">
+        <input type="text" name="Blogid" value=" @ViewBag.deger" style="visibility:collapse"/>
+        <input type="text" placeholder="Kullanıcı Ad" required />
+        <input type="text" placeholder="Mail" required />
+        <textarea placeholder="İçerik Yazınız..."></textarea>
+        <input type="submit" value="Gönder" />
+    </form>
+</div>

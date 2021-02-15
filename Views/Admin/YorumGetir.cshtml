@@ -1,0 +1,30 @@
+﻿@model TatilSeyahatSitesiMVc.Models.Sinflar.Yorumlar
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>YORUM DÜZENLEME PANELİ</h2>
+
+@using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+{
+    <div>
+        <label><b>KULLANICI AD</b></label>
+        @Html.TextBoxFor(x => x.KullaniciAd, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>MAİL</b></label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>YORUM</b></label>
+        @Html.TextAreaFor(x => x.Yorum,10,1, new { @class = "form-control" })
+    </div>
+    <br />
+    @Html.HiddenFor(x => x.id)
+    <div>
+        <button class="btn btn-warning">Yorum Güncelle</button>
+    </div>
+}

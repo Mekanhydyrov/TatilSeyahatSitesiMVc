@@ -1,0 +1,28 @@
+﻿@model TatilSeyahatSitesiMVc.Models.Sinflar.Hakkimizda
+@{
+    ViewBag.Title = "HakkimdaGetir";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>HAKKIMDA PANELİ</h2>
+
+@using (Html.BeginForm("HakkimdaGuncelle", "Admin", FormMethod.Post))
+{
+    <div>
+        <label><b>Hakkımda</b></label>
+        @Html.TextAreaFor(x => x.Aciklama, 10, 1, new { @class = "form-control" })
+    </div>
+    <br />
+    <hr />
+    <div>
+        <label><b>Foto Url</b></label>
+        @Html.TextBoxFor(x => x.FotoUrl, new { @class = "form-control" })
+    </div>
+    <br />
+    <hr />
+    @Html.HiddenFor(x => x.id)
+    <div>
+        <button class="btn btn-primary">Hakkımda Güncelle</button>
+    </div>
+
+}
