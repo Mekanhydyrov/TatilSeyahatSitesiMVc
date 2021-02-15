@@ -86,6 +86,14 @@ namespace TatilSeyahatSitesiMVc.Controllers
             c.SaveChanges();
             return PartialView();
         }
-        
+        //eklenti
+        [HttpPost]
+        public PartialViewResult iletisim1(İletisim p)
+        {
+            c.iletisims.Add(p);
+            c.SaveChanges();
+            return PartialView();
+        }
+
     }
 }
